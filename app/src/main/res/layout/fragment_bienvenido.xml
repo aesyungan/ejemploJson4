@@ -9,5 +9,60 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fnd"
+        android:orientation="vertical"
+        android:weightSum="1">
 
+        <TextView
+            android:gravity="center"
+            android:textColor="#2d2b2b"
+            android:textSize="45dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="¡BIENVENIDO!" />
+
+        <ImageView
+            android:id="@+id/imageViewLogin"
+            android:layout_width="229dp"
+            android:layout_height="184dp"
+            android:src="@drawable/circ"
+            android:layout_gravity="center"
+            android:layout_weight="0.12" />
+        <!--
+       <ImageView
+
+           android:layout_width="183dp"
+           android:layout_height="184dp"
+           android:src="@drawable/icono"
+           android:layout_gravity="center"
+           android:id="@+id/imageViewLogin" />
+           -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_weight="0.55"
+            android:textStyle="bold"
+            android:textColor="#2d2b2b"
+            android:textSize="90px"
+            android:text="Forma parte de nuestro servicio automatizado en compras, usa tu dispositivo movil."
+            android:gravity="center"
+            android:id="@+id/textView7" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_weight="0.17"
+            android:textStyle="bold"
+            android:textColor="#2d2b2b"
+            android:textSize="70px"
+            android:text="Factura y Paga Fácil."
+            android:gravity="center"
+            android:id="@+id/textView" />
+
+
+    </LinearLayout>
 </FrameLayout>
