@@ -2,10 +2,12 @@ package com.example.xl.ejemplojson;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -24,7 +26,10 @@ import com.example.xl.ejemplojson.clasesEstaticas.ClienteLogueado;
 import java.io.InputStream;
 
 public class MenuPrincipal extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+Compas.OnFragmentInteractionListener,
+        Bienvenido.OnFragmentInteractionListener
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +72,12 @@ public class MenuPrincipal extends AppCompatActivity
         precio.setText(ClienteLogueado.cliente.getBono());
         new DownloadImageTask(user_foto).execute("http://misimagenesde.com/wp-content/uploads/2013/06/imagenes-de-personas-1.jpg");
 
+
+        ///
+
+        //fragmento por defecto
+        Bienvenido fragment_mapa= new Bienvenido();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragmentContenedorTodo,fragment_mapa).commit();
     }
 
     @Override
@@ -109,6 +120,12 @@ public class MenuPrincipal extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+
+            Compas fragment_mapa= new Compas();
+            FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
+
+            transaction.replace(R.id.fragmentContenedorTodo,fragment_mapa);
+            transaction.commit();
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -126,7 +143,10 @@ public class MenuPrincipal extends AppCompatActivity
         return true;
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
+    }
 
 
     ///////////////////

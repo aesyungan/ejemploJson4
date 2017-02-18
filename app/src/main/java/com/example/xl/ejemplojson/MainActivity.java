@@ -1,6 +1,7 @@
 package com.example.xl.ejemplojson;
 
 import android.app.ProgressDialog;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +22,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Compas.OnFragmentInteractionListener {
 
     ListView listView;
     List<Categoria> lista = new ArrayList<>();
@@ -43,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
     public class OptenerCategoria extends AsyncTask<Void, Integer, Boolean> {
         ProgressDialog pDialog;
         // products JSONArray

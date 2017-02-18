@@ -12,4 +12,7 @@
     <string name="action_settings">Settings</string>
 
     <string name="s_cliente_logear">http://13.92.130.144/innovacion/services/s_categoria_listar.php</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
