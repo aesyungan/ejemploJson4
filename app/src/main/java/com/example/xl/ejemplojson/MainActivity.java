@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             JSON jParser1 = new JSON();
            // parametros.add(new BasicNameValuePair("id_usuario", Integer.toString(Usuario.getId_usuario())));//solo par q vea datos de usuario logueado
             //json = jParser1.makeHttpRequest("http://findme.webcindario.com/vista/usuario_dispositivo_listar.php", "GET", parametros);
-            json = jParser1.makeHttpRequest("http://13.92.130.144/innovacion/services/s_listar_categoria.php", "GET", parametros);
+            json = jParser1.makeHttpRequest(getString(R.string.s_categoria_listar), "GET", parametros);
             // Check your log cat for JSON reponse
             Log.d("All Products: ", json.toString());
             try {
