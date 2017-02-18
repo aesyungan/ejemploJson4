@@ -53,7 +53,7 @@
                                 android:textSize="30dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Login..Ventas" />
+                                android:text="Ingresa a comprar" />
                             <!--
                            <ImageView
 
@@ -68,7 +68,7 @@
                                 android:id="@+id/imageViewLogin"
                                 android:layout_width="183dp"
                                 android:layout_height="184dp"
-                                android:src="@drawable/icono"
+                                android:src="@drawable/log"
                                 app:civ_border_width="2dp"
                                 app:civ_border_color="#ffffff"/>
 
