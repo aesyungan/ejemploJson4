@@ -2,12 +2,14 @@ package com.example.xl.ejemplojson;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +45,30 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
              new LoguearAsyncTask().execute();
+            }
+        });
+
+
+        TabHost tabs = (TabHost) findViewById(R.id.TabLogin);
+        tabs.setup();
+        Resources res = getResources();
+        TabHost.TabSpec spec = tabs.newTabSpec("tabLogin");
+        spec.setContent(R.id.email_login_form);
+        spec.setIndicator("", res.getDrawable(R.drawable.login));
+        tabs.addTab(spec);
+
+        spec = tabs.newTabSpec("mitab2");
+        spec.setContent(R.id.tab2_Registro);
+        spec.setIndicator("", res.getDrawable(R.drawable.register1));
+        tabs.addTab(spec);
+
+        tabs.setCurrentTab(0);//por default
+        tabs.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String s) {
+                // Toast.makeText(getContext(), "id" + s, Toast.LENGTH_LONG).show();
+
+                Log.d("id_tabs", "" + s);
             }
         });
     }
@@ -84,7 +110,7 @@ public class Login extends AppCompatActivity {
 
                 params.add(new BasicNameValuePair("nick", userNow));
                 params.add(new BasicNameValuePair("password", passNow));
-                String REGISTER_URL = getString(R.string.s_cliente_logear);//servio web Loguear
+                String REGISTER_URL = "http://13.92.130.144/innovacion/services/s_categoria_listar.php";//servio web Loguear
 
                 //Posting user data to script
                 JSONObject json = this.json.makeHttpRequest(REGISTER_URL, "GET", params);
