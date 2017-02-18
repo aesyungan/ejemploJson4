@@ -53,7 +53,7 @@
                                 android:textSize="30dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Login.." />
+                                android:text="Login..Ventas" />
                             <!--
                            <ImageView
 
@@ -79,7 +79,7 @@
                             android:layout_height="wrap_content">
 
                             <AutoCompleteTextView
-                                android:id="@+id/email"
+                                android:id="@+id/txtcedula"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="email"
@@ -97,10 +97,10 @@
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/pass">
+                            >
 
                             <EditText
-                                android:id="@+id/password"
+                                android:id="@+id/txtpassword"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="password"
