@@ -4,4 +4,10 @@
     <string name="nombre1">Hola :v</string>
     <string name="alex">Hola :v</string>
     <string name="nombre145">Hola :v</string>
+    <string name="title_activity_menu_principal">MenuPrincipal</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
