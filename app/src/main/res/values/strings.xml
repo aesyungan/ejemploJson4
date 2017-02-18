@@ -10,4 +10,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="s_cliente_logear">http://13.92.130.144/innovacion/services/s_categoria_listar.php</string>
 </resources>
