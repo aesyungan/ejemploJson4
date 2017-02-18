@@ -2,4 +2,6 @@
     <string name="app_name">ejemploJson</string>
     <string name="s_categoria_listar">http://13.92.130.144/innovacion/services/s_categoria_listar.php</string>
     <string name="nombre1">Hola :v</string>
+
+    <string name="nombre145">Hola :v</string>
 </resources>
