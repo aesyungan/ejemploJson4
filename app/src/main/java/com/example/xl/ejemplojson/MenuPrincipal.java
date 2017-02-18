@@ -121,13 +121,17 @@ Compas.OnFragmentInteractionListener,
         if (id == R.id.nav_camera) {
             // Handle the camera action
 
-            Compas fragment_mapa= new Compas();
+            Bienvenido fragment_mapa= new Bienvenido();
             FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
 
             transaction.replace(R.id.fragmentContenedorTodo,fragment_mapa);
             transaction.commit();
         } else if (id == R.id.nav_gallery) {
+            Compas fragment_mapa= new Compas();
+            FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
 
+            transaction.replace(R.id.fragmentContenedorTodo,fragment_mapa);
+            transaction.commit();
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
