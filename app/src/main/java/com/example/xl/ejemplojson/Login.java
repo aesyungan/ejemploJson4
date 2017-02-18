@@ -99,18 +99,12 @@ public class Login extends AppCompatActivity {
             // TODO Auto-generated method stub
             // Check for success tag
             int success;
-
-
             try {
                 // Building Parameters
                 List params = new ArrayList();
-
-
-
-
-                params.add(new BasicNameValuePair("nick", userNow));
+                params.add(new BasicNameValuePair("cedula", userNow));
                 params.add(new BasicNameValuePair("password", passNow));
-                String REGISTER_URL = "http://13.92.130.144/innovacion/services/s_categoria_listar.php";//servio web Loguear
+                String REGISTER_URL = "http://13.92.130.144/innovacion/services/s_cliente_logear.php";//servio web Loguear
 
                 //Posting user data to script
                 JSONObject json = this.json.makeHttpRequest(REGISTER_URL, "GET", params);
@@ -124,7 +118,7 @@ public class Login extends AppCompatActivity {
                     Log.d("Correct Login!", json.toString());
                     //cargar datos a la clase statica
                     JSONArray products = null;
-                    products = json.getJSONArray("usuarios");
+                    products = json.getJSONArray("clientes");
                     for (int i = 0; i < products.length(); i++) {
                         JSONObject c = products.getJSONObject(i);
                         // Storing each json item in variable
@@ -140,9 +134,6 @@ public class Login extends AppCompatActivity {
                         clienteLogueado.setEmail(c.getString("email"));
                         clienteLogueado.setFoto(c.getString("foto"));
                         ClienteLogueado.cliente=clienteLogueado;
-
-
-
                     }
 
 

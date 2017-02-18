@@ -1,8 +1,12 @@
 package com.example.xl.ejemplojson;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,6 +16,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.xl.ejemplojson.clasesEstaticas.ClienteLogueado;
+
+import java.io.InputStream;
 
 public class MenuPrincipal extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,6 +50,23 @@ public class MenuPrincipal extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        //Header
+        View header = navigationView.getHeaderView(0);
+        TextView usuarionombre = (TextView) header.findViewById(R.id.txtnombre);
+        usuarionombre.setText(ClienteLogueado.cliente.getNombre()+" "+ClienteLogueado.cliente.getApellido());
+        TextView num_orden = (TextView) header.findViewById(R.id.numorden);
+        num_orden.setText(ClienteLogueado.cliente.getCedula());
+        ImageView user_foto = (ImageView) header.findViewById(R.id.txtimagen);
+        //bono
+        TextView bono = (TextView) header.findViewById(R.id.txtbono);
+        bono.setText(ClienteLogueado.cliente.getBono());
+        //precio
+        TextView precio = (TextView) header.findViewById(R.id.txtprecio);
+        precio.setText(ClienteLogueado.cliente.getBono());
+        new DownloadImageTask(user_foto).execute("http://misimagenesde.com/wp-content/uploads/2013/06/imagenes-de-personas-1.jpg");
+
     }
 
     @Override
@@ -97,5 +124,46 @@ public class MenuPrincipal extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+
+
+    ///////////////////
+    //cargar foto de perfil
+
+    class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+        ImageView bmImage;
+
+        public DownloadImageTask(ImageView bmImage) {
+            this.bmImage = bmImage;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            // TODO Auto-generated method stub
+            super.onPreExecute();
+            //pd.show();
+        }
+
+        protected Bitmap doInBackground(String... urls) {
+            String urldisplay = urls[0];
+            Bitmap mIcon11 = null;
+            try {
+                InputStream in = new java.net.URL(urldisplay).openStream();
+                mIcon11 = BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                Log.e("Error", e.getMessage());
+                e.printStackTrace();
+            }
+            return mIcon11;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap result) {
+            super.onPostExecute(result);
+            //pd.dismiss();
+            bmImage.setImageBitmap(result);
+        }
     }
 }
