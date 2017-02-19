@@ -1,5 +1,7 @@
 package com.example.xl.ejemplojson.clasesEstaticas;
 
+import android.content.Context;
+
 import com.example.xl.ejemplojson.clases.Cliente;
 
 /**
@@ -8,6 +10,7 @@ import com.example.xl.ejemplojson.clases.Cliente;
 
 public  class ClienteLogueado {
   public   static Cliente cliente;
+  public  static Context context;
 
 
 

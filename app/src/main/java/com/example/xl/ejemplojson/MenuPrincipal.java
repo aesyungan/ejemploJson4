@@ -38,14 +38,7 @@ Compas.OnFragmentInteractionListener,
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -59,7 +52,7 @@ Compas.OnFragmentInteractionListener,
 
         //Header
         View header = navigationView.getHeaderView(0);
-        TextView usuarionombre = (TextView) header.findViewById(R.id.txtnombre);
+        TextView usuarionombre = (TextView) header.findViewById(R.id.txtnombrePro);
         usuarionombre.setText(ClienteLogueado.cliente.getNombre()+" "+ClienteLogueado.cliente.getApellido());
         TextView num_orden = (TextView) header.findViewById(R.id.numorden);
         num_orden.setText(ClienteLogueado.cliente.getCedula());
@@ -78,6 +71,10 @@ Compas.OnFragmentInteractionListener,
         //fragmento por defecto
         Bienvenido fragment_mapa= new Bienvenido();
         getSupportFragmentManager().beginTransaction().add(R.id.fragmentContenedorTodo,fragment_mapa).commit();
+
+        //contex
+
+        ClienteLogueado.context=getApplicationContext();
     }
 
     @Override

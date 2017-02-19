@@ -1,72 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:text="Id del Producto: "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textViewIdproducto" />
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:background="#605c5c"
+    android:layout_marginTop="5dp"
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:text="Nombre del Producto:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewnombre"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2" />
+    <RelativeLayout
+        android:layout_width="382dp"
+        android:padding="15dp"
+        android:layout_height="79dp">
+       <ImageView
+           android:layout_width="50dp"
+           android:src="@drawable/carrito"
+           android:layout_height="wrap_content"
+           android:id="@+id/imageView2" />
 
-    <TextView
-        android:text="Precio por Unidad:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textViewaprecio" />
+        <TextView
+            android:layout_width="200dp"
+            android:text="Cerveza"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/txtnombreProducto"
+            android:layout_toRightOf="@+id/imageView2" />
 
-    <TextView
-        android:text="Stock Disponible:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_toRightOf="@+id/textView4"
-        android:id="@+id/textViewstock"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="10"
+            android:textSize="25dp"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtprecio"
+            android:gravity="center_vertical"
+            android:layout_alignBaseline="@+id/txtnombreProducto"
+            android:layout_alignBottom="@+id/txtnombreProducto"
+            android:layout_toRightOf="@+id/txtnombreProducto"
+            android:layout_toEndOf="@+id/txtnombreProducto" />
 
-    <TextView
-        android:text="Categoria: "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textViewIdCategoria" />
+        <android.support.design.widget.FloatingActionButton
 
-    <TextView
-        android:text="Format"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewnombre"
-        android:layout_toRightOf="@+id/textView6"
-        android:id="@+id/textViewformat"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-    <TextView
-        android:text="Content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewnombre"
-        android:layout_toRightOf="@+id/textView6"
-        android:id="@+id/textViewcontent"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txtnombrePro"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@android:drawable/ic_delete"
+            android:id="@+id/floatingActionButton" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="$"
+            android:textSize="25dp"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView10"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/txtprecio"
+            android:layout_toEndOf="@+id/txtprecio"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true" />
+    </RelativeLayout>
+
 
 </LinearLayout>
